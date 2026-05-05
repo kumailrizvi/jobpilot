@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JobPilot AI</title>
+    <style>
+      body { width: 340px; font-family: Arial, sans-serif; padding: 14px; color: #0f172a; }
+      h1 { font-size: 18px; margin: 0 0 8px; }
+      label { display:block; margin-top: 10px; font-size: 12px; font-weight: 600; }
+      input, textarea { width: 100%; box-sizing: border-box; margin-top: 5px; padding: 8px; border: 1px solid #cbd5e1; border-radius: 8px; }
+      textarea { min-height: 70px; }
+      button { margin-top: 12px; width: 100%; padding: 10px; background:#0f172a; color:white; border:0; border-radius: 10px; cursor:pointer; }
+      .secondary { background: white; color:#0f172a; border:1px solid #cbd5e1; }
+      p { font-size: 12px; color:#475569; line-height:1.4; }
+      .status { margin-top: 8px; font-size: 12px; color:#334155; }
+    </style>
+  </head>
+  <body>
+    <h1>JobPilot AI</h1>
+    <p>Paste the approved application package from your dashboard. This fills fields but does not bypass CAPTCHA or force-submit.</p>
+
+    <label>Full Name</label>
+    <input id="fullName" placeholder="Kumail Rizvi" />
+
+    <label>Email</label>
+    <input id="email" placeholder="you@email.com" />
+
+    <label>Phone</label>
+    <input id="phone" placeholder="+1..." />
+
+    <label>LinkedIn URL</label>
+    <input id="linkedin" placeholder="https://linkedin.com/in/..." />
+
+    <label>Portfolio / Website</label>
+    <input id="website" placeholder="https://..." />
+
+    <label>Cover Letter</label>
+    <textarea id="coverLetter"></textarea>
+
+    <label>Application Answers / Notes</label>
+    <textarea id="answers"></textarea>
+
+    <button id="save">Save Package</button>
+    <button id="fill" class="secondary">Autofill Current Page</button>
+
+    <div id="status" class="status"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>

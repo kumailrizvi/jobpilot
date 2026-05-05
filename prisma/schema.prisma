@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+
+  profile      CandidateProfile?
+  resumes      Resume[]
+  jobs         Job[]
+  applications Application[]
+}
+
+model CandidateProfile {
+  id                  String   @id @default(cuid())
+  userId              String   @unique
+  headline            String?
+  background          String
+  targetRoles         String?
+  locations           String?
+  workAuthorization   String?
+  salaryExpectation   String?
+  genericAnswers      String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Resume {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Job {
+  id             String   @id @default(cuid())
+  userId         String
+  companyName    String
+  title          String
+  location       String?
+  sourceUrl      String?
+  platform       String?
+  description    String
+  createdAt      DateTime @default(now())
+
+  user         User          @relation(fields: [userId], references: [id])
+  applications Application[]
+}
+
+model Application {
+  id               String            @id @default(cuid())
+  userId           String
+  jobId            String
+  status           ApplicationStatus @default(DRAFT)
+  tailoredResume   String?
+  coverLetter      String?
+  applicationNotes String?
+  generatedAnswers String?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
+  job  Job  @relation(fields: [jobId], references: [id])
+}
+
+enum ApplicationStatus {
+  DRAFT
+  READY_FOR_REVIEW
+  APPROVED
+  SUBMITTED
+  NEEDS_USER_ACTION
+  REJECTED
+  INTERVIEW
+}

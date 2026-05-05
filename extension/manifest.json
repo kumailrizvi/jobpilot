@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "JobPilot AI Autofill",
+  "version": "0.1.0",
+  "description": "Autofill job applications with user-approved AI-generated content.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://*.greenhouse.io/*",
+    "https://*.lever.co/*",
+    "https://*.ashbyhq.com/*",
+    "https://*.workdayjobs.com/*",
+    "https://*.myworkdayjobs.com/*",
+    "https://*.dayforcehcm.com/*",
+    "https://*.linkedin.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "JobPilot AI"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.greenhouse.io/*",
+        "https://*.lever.co/*",
+        "https://*.ashbyhq.com/*",
+        "https://*.workdayjobs.com/*",
+        "https://*.myworkdayjobs.com/*",
+        "https://*.dayforcehcm.com/*",
+        "https://*.linkedin.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
