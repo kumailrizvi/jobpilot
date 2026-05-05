@@ -73,4 +73,3 @@ Current connectors:
 - generic routing for Ashby, Workday, Dayforce, LinkedIn
 
 The MVP uses a safe user-assisted apply flow.
-# jobpilot

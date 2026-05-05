@@ -50,7 +50,7 @@ export default async function DashboardPage() {
       <div className="mt-8 grid gap-4 md:grid-cols-3">
         <Stat label="Jobs" value={user.jobs.length} />
         <Stat label="Applications" value={user.applications.length} />
-        <Stat label="Ready/Submitting" value={user.applications.filter(a => ["READY_FOR_REVIEW", "APPROVED", "SUBMITTED"].includes(a.status)).length} />
+        <Stat label="Ready/Submitting" value={user.applications.filter((a: { status: string }) => ["READY_FOR_REVIEW", "APPROVED", "SUBMITTED"].includes(a.status)).length} />
       </div>
 
       <section className="mt-8 rounded-2xl border bg-white p-6 shadow-sm">

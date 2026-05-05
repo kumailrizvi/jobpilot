@@ -1,0 +1,37 @@
+# Full code index
+
+- `.env.example`
+- `ARCHITECTURE.md`
+- `PRODUCT_SPEC.md`
+- `README.md`
+- `VERCEL_DEPLOY.md`
+- `app/api/applications/[id]/apply/route.ts`
+- `app/api/applications/[id]/generate/route.ts`
+- `app/api/applications/[id]/package/route.ts`
+- `app/applications/[id]/page.tsx`
+- `app/dashboard/page.tsx`
+- `app/globals.css`
+- `app/jobs/new/page.tsx`
+- `app/layout.tsx`
+- `app/page.tsx`
+- `app/profile/page.tsx`
+- `extension/README.md`
+- `extension/content.js`
+- `extension/manifest.json`
+- `extension/popup.html`
+- `extension/popup.js`
+- `lib/applicationAutomation.ts`
+- `lib/connectors/greenhouse.ts`
+- `lib/connectors/index.ts`
+- `lib/connectors/lever.ts`
+- `lib/connectors/types.ts`
+- `lib/openai.ts`
+- `lib/prisma.ts`
+- `lib/prompts.ts`
+- `next-env.d.ts`
+- `next.config.js`
+- `package.json`
+- `postcss.config.js`
+- `prisma/schema.prisma`
+- `tailwind.config.ts`
+- `tsconfig.json`
